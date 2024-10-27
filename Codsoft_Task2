@@ -1,0 +1,57 @@
+#Task2: Calculator
+#Design a simple calculator with basic arithmetic operations.
+#Prompt the user to input two numbers and an operation choice.
+#Perform the calculation and display the result.
+
+print("Simple Calculator - ")
+
+#Function
+def calc(a,b,op):
+    #if-else conditional statements to return the result value based on the operation
+    if op == 1:
+        #Addition
+        return a+b
+    elif op == 2:
+        #Subtraction
+        return a-b
+    elif op == 3:
+        #Multiplication
+        return a*b
+    elif op == 4:
+        #Division
+        if b==0:
+            print("Error! Zero by division doesn't give an integer.")
+            #If Zero is dividend, result is undefined
+            return
+        else:
+            return a/b
+    else:
+            #Invalid Input(The option isn't within the the available operators)
+            print("\nInvalid Input. \nPlease select a valid operation.")
+    
+#Main Function
+def main():
+    while True:
+        #Prompting to enter numbers
+        #Input
+        
+        a = float(input("\nEnter your first number: "))
+        b = float(input("Enter your second number: "))
+        
+        #Selecting an operator
+        print("\nSelect an operation to proceed.\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division")
+        op = int(input("Enter your choice: "))
+
+        #Printing the function's result
+        #Output
+        print(f"Result: ",calc(a,b,op))
+        
+        #User's choice to perform another calculation or no
+        choice = input("\nDo you want to perform another calculation? (yes/no): ")
+        if choice != "yes":
+            print("Thank You!")
+            break
+
+#Calling the main function
+if __name__ == "__main__":
+    main()
